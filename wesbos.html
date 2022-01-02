@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Wes Bos sayti</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: inline-block;
+            position: relative;
+            height: 80px;
+            width: 200px;
+            background-color: gold;
+        }
+
+        .box::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 0;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            /* background-color: red; */
+            border-top: 5px solid green;
+            border-left: 5px solid purple;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            /* background-color: brown; */
+            transform: translateY(-50%);
+            border-right: 5px solid gold;
+            left: -10px;
+            border-top: 5px solid transparent;
+            border-left: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        .ota {
+            padding: 15px;
+            background-color: #555;
+            /* overflow: hidden; */
+            position: relative;
+        }
+
+        .ota::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .bola {
+            background-color: orange;
+            width: 30%;
+            min-height: 100px;
+            float: left;
+        }
+        .ota::after {
+            content: '';
+            display: block;
+            clear: both;
+
+        }
+
+        .bola+.bola {
+            margin-left: 5%;
+        }
+        /* .clr {
+            clear: both;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box"> Lorem ipsum dolor sit amet.</div> -->
+
+    <div class="ota">
+        <div class="bola">1</div>
+        <div class="bola">2</div>
+        <div class="bola">3</div>
+        <div class="clr"></div>
+    </div>
+</body>
+
+</html>
